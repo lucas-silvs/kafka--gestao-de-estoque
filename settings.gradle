@@ -1,0 +1,5 @@
+rootProject.name = 'kafka--gestao-de-estoque'
+
+include 'caixa--consumer',
+        'caixa--producer'
+
