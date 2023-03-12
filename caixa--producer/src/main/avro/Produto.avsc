@@ -1,0 +1,23 @@
+{
+  "name": "ProdutoAvro",
+  "namespace": "com.lucassilvs.caixaproducer.kafka",
+  "type": "record",
+  "doc": "Sample schema to help you get started.",
+  "fields": [
+    {
+      "doc": "id produto",
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "doc": "nomeProduto",
+      "name": "nome",
+      "type": "string"
+    },
+    {
+      "doc": "unidade retiradas ou inseridas",
+      "name": "quantidade",
+      "type": "int"
+    }
+  ]
+}
