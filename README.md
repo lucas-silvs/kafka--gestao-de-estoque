@@ -31,3 +31,15 @@ GROUP BY id
 
 a busca para criação da tabela é baseada no dado mais recente da coluna 'quantidade'
 
+Abaixo está a query para criação da tabela de produto e quantidade,
+porém agora é decrementado ou incrementado baseado no que for solicitado
+pelo producer:
+
+```sql
+CREATE TABLE produtos_table_sum WITH(VALUE_FORMAT='AVRO') AS
+  select id, SUM(quantidade) 
+  from PRODUTOS_STREAM
+  GROUP BY id
+  EMIT CHANGES;
+```
+
