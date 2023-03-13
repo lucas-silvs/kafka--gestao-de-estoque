@@ -21,8 +21,6 @@ Para iniciar o Kafka, deve executar dentro da pasta docker/confluent-all-in-one 
 docker compose up
 ```
 
-
-
 ## ksqlDB
  será utilizado para esse projeto o ksqlDB, ferramenta da Confluent para gerenciamento
  de processamento de dados de Kafka Stream com sintaxe SQL, e será utilizada para consulta
@@ -39,7 +37,7 @@ CREATE STREAM produtos_stream
        VALUE_FORMAT='AVRO');
 ```
 
-e abaixo o comando para criar uma tabela ksqDB a partir do tópico produtos:
+Abaixo o comando para criar uma tabela ksqDB a partir da stream criada anteriormente:
 
 ```sql
 
