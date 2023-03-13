@@ -56,7 +56,7 @@ pelo producer:
 
 ```sql
 CREATE TABLE produtos_table WITH(VALUE_FORMAT='AVRO') AS
-select id, SUM(quantidade) as QUANTIDADE
+select id, LATEST_BY_OFFSET(nome) as NOME, SUM(quantidade) as QUANTIDADE
 from PRODUTOS_STREAM
 GROUP BY id
  EMIT CHANGES;

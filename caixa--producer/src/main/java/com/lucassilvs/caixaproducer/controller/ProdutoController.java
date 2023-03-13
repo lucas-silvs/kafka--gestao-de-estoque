@@ -2,12 +2,14 @@ package com.lucassilvs.caixaproducer.controller;
 
 import com.lucassilvs.caixaproducer.models.request.ProdutoRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-@RestController
 public interface ProdutoController {
 
-    ResponseEntity<String> adicionarProduto(ProdutoRequest produtoRequest);
+    @PostMapping("/adicionar-produto")
+    ResponseEntity<String> adicionarProduto(  @RequestBody ProdutoRequest produtoRequest);
 
-    ResponseEntity<String> removerProduto(ProdutoRequest produtoRequest);
+    @PostMapping("/remover-produto")
+    ResponseEntity<String> removerProduto(@RequestBody ProdutoRequest produtoRequest);
 }

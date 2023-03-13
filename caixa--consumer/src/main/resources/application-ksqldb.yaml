@@ -1,0 +1,4 @@
+spring:
+  ksqldb:
+    host: http://localhost
+    port: 8088

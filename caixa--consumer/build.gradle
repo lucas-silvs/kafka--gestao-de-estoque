@@ -20,8 +20,16 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	//Kafka
-	implementation 'org.springframework.kafka:spring-kafka'
-	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	implementation ('io.confluent.ksql:ksqldb-udf:7.2.1'){
+		exclude group: 'ch.qos.reload4j', module: 'reload4j'
+	}
+	implementation ('io.confluent.ksql:ksqldb-common:7.2.1'){
+		exclude group: 'ch.qos.reload4j', module: 'reload4j'
+	}
+	implementation ('io.confluent.ksql:ksqldb-api-client:7.2.1'){
+		exclude group: 'ch.qos.reload4j', module: 'reload4j'
+	}
+
 }
 
 tasks.named('test') {
