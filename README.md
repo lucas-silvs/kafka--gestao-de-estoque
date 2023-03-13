@@ -55,11 +55,11 @@ porém agora é decrementado ou incrementado baseado no que for solicitado
 pelo producer:
 
 ```sql
-CREATE TABLE produtos_table_sum WITH(VALUE_FORMAT='AVRO') AS
-  select id, SUM(quantidade) 
-  from PRODUTOS_STREAM
-  GROUP BY id
-  EMIT CHANGES;
+CREATE TABLE produtos_table WITH(VALUE_FORMAT='AVRO') AS
+select id, SUM(quantidade) as QUANTIDADE
+from PRODUTOS_STREAM
+GROUP BY id
+ EMIT CHANGES;
 ```
 ## Referencias
 
